@@ -1,0 +1,47 @@
+---
+layout: base.njk
+---
+<article class="blog-post">
+  <div class="blog-post-hero">
+    <div class="container">
+      <span class="eyebrow">{{ author }}</span>
+      <h1>{{ title }}</h1>
+      <p class="post-meta">{{ date | dateFormat }} &middot; {{ readTime }}</p>
+    </div>
+  </div>
+  <div class="blog-post-body container">
+    {{ content | safe }}
+  </div>
+</article>
+
+<style>
+  .blog-post-hero {
+    background: var(--bg-warm);
+    padding: 80px 32px 60px;
+    border-bottom: 1px solid var(--border);
+  }
+  .blog-post-hero h1 {
+    max-width: 780px;
+    margin-bottom: 0.5em;
+  }
+  .post-meta {
+    color: var(--text-light);
+    font-size: 14px;
+  }
+  .blog-post-body {
+    padding: 60px 32px;
+    max-width: 780px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .blog-post-body h2 {
+    margin-top: 2em;
+  }
+  .blog-post-body h3 {
+    margin-top: 1.5em;
+  }
+  .blog-post-body p {
+    color: var(--text);
+    margin-bottom: 1.5em;
+  }
+</style>

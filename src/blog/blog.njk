@@ -1,0 +1,48 @@
+---
+layout: base.njk
+title: Blog
+description: Insights and reflections on core concepts in Hindu philosophy from the author.
+permalink: /blog/
+---
+<section class="blog-listing-hero alt-bg">
+  <div class="container">
+    <span class="eyebrow">Insights</span>
+    <h1>The Blog</h1>
+    <p>Reflections, discussions, and insights on Hindu philosophy and its timeless wisdom.</p>
+  </div>
+</section>
+
+<section class="blog-listing">
+  <div class="container">
+    {% if collections.blog.length > 0 %}
+    <div class="grid grid-3">
+      {% for post in collections.blog %}
+      <a href="{{ post.url }}" class="card" style="text-decoration: none;">
+        <div class="card-content">
+          <span class="eyebrow">{{ post.data.date | dateFormat }}</span>
+          <h3>{{ post.data.title }}</h3>
+          <p>{{ post.data.description }}</p>
+          <span class="card-link">Read more <span class="arrow">→</span></span>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+    {% else %}
+    <p style="text-align: center; color: var(--text-light);">No posts yet. Check back soon!</p>
+    {% endif %}
+  </div>
+</section>
+
+<style>
+  .blog-listing-hero {
+    padding: 80px 32px 60px;
+    text-align: left;
+  }
+  .blog-listing-hero h1 {
+    max-width: 600px;
+    margin-bottom: 0.5em;
+  }
+  .blog-listing {
+    padding: 80px 32px;
+  }
+</style>

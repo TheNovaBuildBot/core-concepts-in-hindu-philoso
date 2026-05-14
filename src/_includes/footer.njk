@@ -2,9 +2,11 @@
   <div class="footer-content">
     <div class="footer-section">
       <h4>About</h4>
-      <p>{{ site.name }} is dedicated to exploring and sharing the profound wisdom of Hindu philosophy with readers and scholars worldwide.</p>
+      <p>{{ site.name }}</p>
+      <p style="font-size: 14px; color: rgba(255, 255, 255, 0.7); margin-top: 0.8em;">{{ site.specialty }}</p>
     </div>
-    
+
+    {% if services.length > 0 %}
     <div class="footer-section">
       <h4>Services</h4>
       <ul>
@@ -13,19 +15,27 @@
         {% endfor %}
       </ul>
     </div>
-    
+    {% endif %}
+
     <div class="footer-section">
       <h4>Contact</h4>
-      <p>{{ site.address_short }}</p>
-      <p><a href="tel:{{ site.phone }}">{{ site.phone_display }}</a></p>
-      <p><a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
-      {% if site.linkedin %}
-      <p><a href="{{ site.linkedin }}" target="_blank">LinkedIn</a></p>
-      {% endif %}
+      <div class="info-item">
+        <strong>Phone</strong>
+        <a href="tel:{{ site.phone }}">{{ site.phone_display }}</a>
+      </div>
+      <div class="info-item">
+        <strong>Email</strong>
+        <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+      </div>
+      <div class="info-item">
+        <strong>Location</strong>
+        <p>{{ site.address }}</p>
+      </div>
     </div>
   </div>
-  
+
   <div class="footer-bottom">
-    <p>&copy; 2026 {{ site.name }}. All rights reserved. Photography via Unsplash.</p>
+    <p>&copy; 2026 {{ site.name }}. All rights reserved.</p>
+    <p>Photography via Unsplash.</p>
   </div>
 </footer>

@@ -1,20 +1,20 @@
 [
   {
     "name": "Author Bio",
-    "description": "Discover the journey and philosophy behind the author. Learn about years of research, study, and dedication to exploring the profound concepts of Hindu philosophy.",
-    "icon": "https://images.unsplash.com/photo-1573497019418-b400bb3ab074?w=800&q=80&auto=format&fit=crop",
-    "alt": "Author in thoughtful reflection"
+    "description": "Learn about the author's journey, credentials, and passion for exploring the depths of Hindu philosophical thought and its relevance to modern life.",
+    "icon": "assets/author.jpg",
+    "alt": "Author bio section representing the writer's expertise and background"
   },
   {
     "name": "Book Synopsis",
-    "description": "A comprehensive exploration of core concepts in Hindu philosophy, examining foundational ideas, teachings, and their relevance to contemporary life and understanding.",
-    "icon": "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=800&q=80&auto=format&fit=crop",
-    "alt": "Open book with philosophical text"
+    "description": "Discover the core themes and essential concepts covered in the book, from fundamental principles to practical applications of Hindu philosophy.",
+    "icon": "assets/synopsis.jpg",
+    "alt": "Book synopsis showing key concepts and chapters"
   },
   {
     "name": "Book Promotion",
-    "description": "Stay updated on book launches, speaking engagements, and exclusive content. Join a community of readers and philosophy enthusiasts exploring Hindu wisdom.",
-    "icon": "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=800&q=80&auto=format&fit=crop",
-    "alt": "Community gathering and discussion"
+    "description": "Stay updated on book launches, special promotions, reading events, and exclusive insights shared directly from the author.",
+    "icon": "assets/promotion.jpg",
+    "alt": "Book promotion and engagement opportunities"
   }
 ]

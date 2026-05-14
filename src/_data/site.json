@@ -1,15 +1,16 @@
 {
   "name": "Core Concepts in Hindu Philosophy",
-  "specialty": "Author & Philosopher",
-  "qualifications": "",
+  "specialty": "Exploring the timeless wisdom of Hindu philosophy",
+  "qualifications": "Author of Core Concepts in Hindu Philosophy",
   "phone": "+11231231234",
-  "phone_display": "+1 123 123 1234",
+  "phone_display": "+1 123-123-1234",
   "email": "pradipgandhi@gmail.com",
   "address": "Ahmedabad",
   "address_short": "Ahmedabad",
   "city": "Ahmedabad",
   "url": "https://core-concepts-in-hindu-philoso.pages.dev",
   "linkedin": "",
-  "whatsapp_message": "Hi! I'm interested in learning more about your book on Hindu philosophy.",
-  "ga_id": ""
+  "whatsapp_message": "Hi, I'd like to learn more about your book on Hindu philosophy.",
+  "ga_id": "",
+  "title_suffix": "Core Concepts in Hindu Philosophy"
 }
