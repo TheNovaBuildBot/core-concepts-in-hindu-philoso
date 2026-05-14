@@ -1,21 +1,17 @@
 name = "core-concepts-in-hindu-philoso"
 type = "javascript"
-main = ""
-compatibility_date = "2024-01-01"
+account_id = ""
+workers_dev = true
+route = ""
+zone_id = ""
+main = "src/index.js"
+site = { bucket = "./_site" }
 
 [env.production]
-name = "core-concepts-in-hindu-philoso"
+vars = { ENVIRONMENT = "production" }
 
 [build]
 command = "npm run build"
-cwd = "./"
 
 [build.upload]
 format = "service-worker"
-
-[[routes]]
-pattern = "*"
-zone_name = ""
-
-[assets]
-directory = "./_site"

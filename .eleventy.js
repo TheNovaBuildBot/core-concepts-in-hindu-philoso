@@ -3,32 +3,34 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/assets");
   eleventyConfig.addPassthroughCopy("src/robots.txt");
 
-  // Blog posts collection
+  // Blog collection
   eleventyConfig.addCollection("blog", function(collection) {
     return collection
       .getFilteredByGlob("src/blog/posts/*.md")
-      .sort((a, b) => new Date(b.data.date) - new Date(a.data.date));
+      .sort((a, b) => b.date - a.date);
   });
 
-  // Date formatting filter
+  // Filters
   eleventyConfig.addFilter("dateFormat", function(date) {
     return new Intl.DateTimeFormat("en-US", {
       year: "numeric",
       month: "long",
       day: "numeric"
-    }).format(new Date(date));
+    }).format(date);
   });
 
-  // ISO date filter
   eleventyConfig.addFilter("dateToISO", function(date) {
-    return new Date(date).toISOString();
+    return new Date(date).toISOString().split('T')[0];
   });
 
+  // Config
   return {
     dir: {
       input: "src",
       output: "_site"
     },
-    templateFormats: ["njk", "md"]
+    templateFormats: ["njk", "md"],
+    markdownTemplateEngine: "njk",
+    htmlTemplateEngine: "njk"
   };
 };

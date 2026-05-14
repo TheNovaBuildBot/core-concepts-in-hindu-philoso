@@ -1,72 +1,74 @@
 ---
 layout: base.njk
-title: Exploring the Timeless Wisdom of Hindu Philosophy
-description: Discover core concepts in Hindu philosophy that continue to shape thought, culture, and spirituality worldwide.
+title: Core Concepts in Hindu Philosophy
+description: Explore the foundational ideas of Hindu philosophy through rigorous scholarship and accessible insight.
 ---
 
-<!-- Hero -->
-<section class="hero">
-  <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1600&q=80&auto=format&fit=crop" alt="Core Concepts in Hindu Philosophy" class="hero-image">
+<!-- HERO -->
+<section id="home" class="hero">
+  <div class="hero-bg">
+    <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1600&q=80&auto=format&fit=crop" alt="Philosophical temple architecture with serene water reflection">
+  </div>
+  <div class="hero-overlay"></div>
   <div class="hero-content">
-    <span class="eyebrow">Philosophical Wisdom</span>
+    <span class="hero-eyebrow">Philosophical Exploration</span>
     <h1>Core Concepts in Hindu Philosophy</h1>
-    <p>Explore the timeless principles that shape understanding, consciousness, and the human experience.</p>
-    <div class="hero-cta">
-      <a href="#contact" class="btn btn-primary">
+    <p class="hero-subhead">A comprehensive journey through Vedic wisdom, metaphysical thought, and the intellectual traditions that shaped civilizations.</p>
+    <div class="hero-ctas">
+      <a href="#services" class="btn btn-primary">
+        Explore the Book
+        <span class="btn-arrow">→</span>
+      </a>
+      <a href="#contact" class="btn btn-ghost">
         Get in Touch
-        <span class="arrow">→</span>
-      </a>
-      <a href="#about" class="btn btn-ghost">
-        Learn More
-        <span class="arrow">→</span>
+        <span class="btn-arrow">→</span>
       </a>
     </div>
   </div>
 </section>
 
-<!-- About -->
-<section id="about" class="alt-bg">
+<!-- ABOUT -->
+<section id="about" class="section-alt">
   <div class="container">
-    <div class="about-content">
+    <div class="about-content" data-scroll-reveal>
       <div class="about-text">
-        <span class="eyebrow">Author</span>
-        <h2>A Journey Through Philosophical Inquiry</h2>
-        <p>This exploration of core concepts in Hindu philosophy draws from centuries of wisdom, bridging ancient thought with contemporary understanding. The author brings a scholarly perspective combined with accessible insights to make these profound ideas relevant to modern seekers.</p>
-        <p>From the fundamental concepts of Brahman and Atman to the practical ethics of karma and dharma, each principle is examined with depth and clarity, offering readers a comprehensive introduction to one of the world's oldest and richest philosophical traditions.</p>
-        <p>Whether you're a scholar, student, or curious learner, this book provides valuable frameworks for understanding consciousness, morality, and the nature of reality itself.</p>
-        <a href="#contact" class="btn btn-primary">
-          Connect with the Author
-          <span class="arrow">→</span>
-        </a>
+        <h2>About the Author</h2>
+        <p>
+          This work represents decades of dedicated study, reflection, and dialogue with classical Hindu texts and contemporary scholarship. The author brings both academic rigor and genuine reverence to these timeless concepts.
+        </p>
+        <p>
+          Rather than imposing modern frameworks onto ancient wisdom, this book allows the philosophical traditions to speak in their own voice—translated, contextualized, and made accessible to serious readers worldwide.
+        </p>
+        <p>
+          Every chapter builds on foundational concepts, creating a pathway for readers to develop a coherent understanding of Hindu philosophy's central themes.
+        </p>
       </div>
-      <div class="about-image">
-        <img src="https://images.unsplash.com/photo-1573497019418-b400bb3ab074?w=1600&q=80&auto=format&fit=crop" alt="Author exploring Hindu philosophy concepts">
+      <div>
+        <img src="https://images.unsplash.com/photo-1573497019418-b400bb3ab074?w=400&q=80&auto=format&fit=crop" alt="Author photograph" class="profile-photo">
       </div>
     </div>
   </div>
 </section>
 
-<!-- Services -->
-<section id="services">
+<!-- SERVICES / BOOK DETAILS -->
+<section id="services" class="section-alt-2">
   <div class="container">
-    <div class="section-header">
-      <span class="eyebrow">What's Included</span>
-      <h2>Comprehensive Resources</h2>
-      <p>Access author insights, detailed book information, and exclusive promotional content to deepen your understanding of Hindu philosophy.</p>
+    <div class="section-header" data-scroll-reveal>
+      <span class="eyebrow">What's Inside</span>
+      <h2>Comprehensive Exploration</h2>
+      <p class="lead">Discover the three pillars of this philosophical inquiry into Hindu thought and practice.</p>
     </div>
-
-    <div class="grid grid-3">
+    
+    <div class="cards">
       {% for service in services %}
-      <div class="card scroll-reveal">
+      <div class="card" data-scroll-reveal>
         <div class="card-image">
-          <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=600&q=80&auto=format&fit=crop" alt="{{ service.alt }}">
+          <img src="{{ service.icon }}" alt="{{ service.alt }}">
         </div>
-        <div class="card-content">
+        <div class="card-body">
           <h3>{{ service.name }}</h3>
           <p>{{ service.description }}</p>
-          <a href="#contact" class="card-link">
-            Learn More <span class="arrow">→</span>
-          </a>
+          <a href="#contact" class="card-link">Learn more <span>→</span></a>
         </div>
       </div>
       {% endfor %}
@@ -74,83 +76,76 @@ description: Discover core concepts in Hindu philosophy that continue to shape t
   </div>
 </section>
 
-<!-- CTA -->
-<section class="cta-section alt-bg">
+<!-- CTA SECTION -->
+<section class="section-alt">
   <div class="container">
-    <span class="eyebrow">Connect</span>
-    <h2>Ready to Explore These Concepts?</h2>
-    <p style="font-size: 18px; color: var(--text-light); margin-bottom: 2em; max-width: 680px; margin-left: auto; margin-right: auto;">
-      Get in touch to discuss the book, schedule author sessions, or arrange speaking engagements.
-    </p>
-    <a href="#contact" class="btn btn-primary">
-      Get in Touch
-      <span class="arrow">→</span>
-    </a>
+    <div style="text-align: center; max-width: 680px; margin: 0 auto;" data-scroll-reveal>
+      <h2>Begin Your Philosophical Journey</h2>
+      <p class="lead" style="margin-bottom: 40px;">
+        Whether you're new to Hindu philosophy or deepening existing knowledge, this comprehensive work offers insight for every reader.
+      </p>
+      <a href="#contact" class="btn btn-primary">
+        Get in Touch
+        <span class="btn-arrow">→</span>
+      </a>
+    </div>
   </div>
 </section>
 
-<!-- Contact -->
-<section id="contact">
+<!-- CONTACT -->
+<section id="contact" class="section-alt-2">
   <div class="container">
-    <div class="section-header">
-      <span class="eyebrow">Let's Talk</span>
+    <div class="section-header" data-scroll-reveal>
+      <span class="eyebrow">Let's Connect</span>
       <h2>Get in Touch</h2>
-      <p>Have questions about the book or interested in discussing Hindu philosophy? We'd love to hear from you.</p>
+      <p class="lead">Have questions about the book or interested in speaking engagements? Reach out directly.</p>
     </div>
-
-    <div class="contact-wrapper">
-      <form class="contact-form" id="contact-form" method="POST">
-        <div class="form-status"></div>
-        
-        <div class="form-group">
-          <label for="name">Name</label>
-          <input type="text" id="name" name="name" required>
-        </div>
-
-        <div class="form-group">
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" required>
-        </div>
-
-        <div class="form-group">
-          <label for="subject">Subject</label>
-          <input type="text" id="subject" name="subject" placeholder="What is this about?" required>
-        </div>
-
-        <div class="form-group">
-          <label for="message">Message</label>
-          <textarea id="message" name="message" required></textarea>
-        </div>
-
-        <button type="submit" class="btn btn-primary">
-          Send Message
-          <span class="arrow">→</span>
-        </button>
-      </form>
-
-      <div class="contact-info">
-        <h3>Contact Information</h3>
-        
-        <div class="info-item">
-          <strong>Email</strong>
+    
+    <div class="contact-content">
+      <div>
+        <form id="contactForm" class="contact-form">
+          <input type="hidden" name="_subject" value="New message from Core Concepts Website">
+          
+          <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" required></textarea>
+          </div>
+          
+          <button type="submit" class="btn btn-primary" style="align-self: flex-start;">
+            Send Message
+            <span class="btn-arrow">→</span>
+          </button>
+          
+          <div id="formMessage" class="form-message"></div>
+        </form>
+      </div>
+      
+      <div class="contact-info" data-scroll-reveal>
+        <div class="contact-info-block">
+          <h3>Email</h3>
+          <p>For inquiries, collaborations, or speaking requests:</p>
           <a href="mailto:{{ site.email }}">{{ site.email }}</a>
         </div>
-
-        <div class="info-item">
-          <strong>Phone</strong>
+        
+        <div class="contact-info-block">
+          <h3>Phone</h3>
+          <p>Reach out directly:</p>
           <a href="tel:{{ site.phone }}">{{ site.phone_display }}</a>
         </div>
-
-        <div class="info-item">
-          <strong>Location</strong>
-          <p>{{ site.address }}</p>
-        </div>
-
-        <div class="info-item">
-          <strong>WhatsApp</strong>
-          <a href="https://wa.me/{{ site.phone | replace('+', '') }}?text={{ site.whatsapp_message | urlencode }}" target="_blank">
-            Start a conversation
-          </a>
+        
+        <div class="contact-info-block">
+          <h3>Location</h3>
+          <p>Based in {{ site.address }}</p>
         </div>
       </div>
     </div>

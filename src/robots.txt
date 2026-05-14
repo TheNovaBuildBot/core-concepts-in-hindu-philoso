@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://core-concepts-in-hindu-philoso.pages.dev/sitemap.xml

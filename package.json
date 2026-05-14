@@ -1,11 +1,11 @@
 {
   "name": "core-concepts-in-hindu-philoso",
   "version": "1.0.0",
-  "description": "Core Concepts in Hindu Philosophy - Book",
+  "description": "Core Concepts in Hindu Philosophy - Official Book Website",
   "scripts": {
+    "start": "eleventy --serve",
     "build": "eleventy",
-    "dev": "eleventy --serve",
-    "deploy": "wrangler pages deploy _site"
+    "deploy": "wrangler deploy"
   },
   "devDependencies": {
     "@11ty/eleventy": "^3.0.0",

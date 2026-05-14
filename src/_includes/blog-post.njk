@@ -1,47 +1,67 @@
 ---
 layout: base.njk
 ---
-<article class="blog-post">
-  <div class="blog-post-hero">
-    <div class="container">
-      <span class="eyebrow">{{ author }}</span>
-      <h1>{{ title }}</h1>
-      <p class="post-meta">{{ date | dateFormat }} &middot; {{ readTime }}</p>
-    </div>
-  </div>
-  <div class="blog-post-body container">
-    {{ content | safe }}
-  </div>
-</article>
 
 <style>
   .blog-post-hero {
-    background: var(--bg-warm);
-    padding: 80px 32px 60px;
-    border-bottom: 1px solid var(--border);
+    background-color: var(--primary-color);
+    padding: 80px calc(var(--spacing-base) * 4);
+    text-align: center;
   }
+
   .blog-post-hero h1 {
-    max-width: 780px;
-    margin-bottom: 0.5em;
-  }
-  .post-meta {
-    color: var(--text-light);
-    font-size: 14px;
-  }
-  .blog-post-body {
-    padding: 60px 32px;
-    max-width: 780px;
+    color: #fff;
+    margin-bottom: calc(var(--spacing-base) * 2);
+    max-width: 800px;
     margin-left: auto;
     margin-right: auto;
   }
+
+  .blog-post-hero .post-meta {
+    color: rgba(255,255,255,0.7);
+    font-size: 14px;
+    margin-top: calc(var(--spacing-base) * 2);
+  }
+
+  .blog-post-body {
+    max-width: 740px;
+    margin: 0 auto;
+    padding: 80px calc(var(--spacing-base) * 4);
+  }
+
   .blog-post-body h2 {
-    margin-top: 2em;
+    margin-top: calc(var(--spacing-base) * 8);
+    margin-bottom: calc(var(--spacing-base) * 3);
   }
-  .blog-post-body h3 {
-    margin-top: 1.5em;
-  }
+
   .blog-post-body p {
-    color: var(--text);
-    margin-bottom: 1.5em;
+    color: var(--text-light);
+    line-height: 1.75;
+    margin-bottom: calc(var(--spacing-base) * 3);
+  }
+
+  .blog-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--secondary-color);
+    font-weight: 600;
+    margin-bottom: calc(var(--spacing-base) * 6);
+    transition: gap 0.35s ease;
+  }
+
+  .blog-back:hover {
+    gap: 10px;
   }
 </style>
+
+<section class="blog-post-hero">
+  <span class="eyebrow" style="color: var(--secondary-color);">{{ author }}</span>
+  <h1>{{ title }}</h1>
+  <p class="post-meta">{{ date | dateFormat }} · {{ readTime }}</p>
+</section>
+
+<section class="blog-post-body">
+  <a href="/blog/" class="blog-back">← Back to Articles</a>
+  {{ content | safe }}
+</section>
