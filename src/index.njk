@@ -1,0 +1,131 @@
+---
+layout: base.njk
+title: Core Concepts in Hindu Philosophy
+description: Explore the profound wisdom of Hindu philosophy with author Pradip Gandhi
+---
+
+<section class="hero" id="home">
+  <div class="hero-content">
+    <div class="eyebrow">Explore Wisdom</div>
+    <h1>Core Concepts in Hindu Philosophy</h1>
+    <p class="hero-subhead">A journey through the timeless teachings and profound ideas that have shaped philosophical thought for millennia.</p>
+    <div class="cta-group">
+      <button class="btn btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+        Get in Touch
+        <span class="arrow">→</span>
+      </button>
+      <button class="btn btn-ghost" onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">
+        Learn More
+      </button>
+    </div>
+  </div>
+</section>
+
+<section class="about-section" id="about">
+  <div class="section-header reveal">
+    <div class="eyebrow">About the Author</div>
+    <h2>Pradip Gandhi</h2>
+    <p>A dedicated scholar and author committed to making the wisdom of Hindu philosophy accessible to contemporary readers.</p>
+  </div>
+  
+  <div class="about-content">
+    <div class="about-text reveal">
+      <h3>A Lifelong Quest for Understanding</h3>
+      <p>With years of research, study, and contemplation, Pradip Gandhi brings a fresh perspective to ancient philosophical concepts. His work bridges the gap between traditional Hindu wisdom and modern understanding.</p>
+      <p>Through careful analysis and thoughtful presentation, the author explores foundational concepts that continue to resonate with readers seeking deeper meaning and spiritual insight.</p>
+      <p>This book represents a comprehensive exploration of ideas that have defined Hindu philosophy—examining their origins, interpretations, and contemporary relevance.</p>
+    </div>
+    <div class="reveal">
+      <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1600&q=80&auto=format&fit=crop" alt="Philosopher in contemplation" style="border-radius: 12px;">
+    </div>
+  </div>
+</section>
+
+<section class="services-section" id="services">
+  <div class="section-header reveal">
+    <div class="eyebrow">What's Included</div>
+    <h2>Services & Offerings</h2>
+    <p>Discover the comprehensive resources and content available as part of this philosophical exploration.</p>
+  </div>
+  
+  <div class="services-grid">
+    {% for service in services %}
+    <div class="service-card reveal">
+      <div class="service-card-image">
+        <img src="{{ service.icon }}" alt="{{ service.alt }}">
+      </div>
+      <div class="service-card-content">
+        <h3>{{ service.name }}</h3>
+        <p>{{ service.description }}</p>
+        <a href="#contact">
+          Learn More
+          <span style="font-size: 16px;">→</span>
+        </a>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="contact-section" id="contact">
+  <div class="section-header reveal" style="margin-bottom: 60px;">
+    <div class="eyebrow">Get In Touch</div>
+    <h2>Contact</h2>
+    <p>Have questions about the book, speaking engagements, or collaboration opportunities? We'd love to hear from you.</p>
+  </div>
+  
+  <div class="contact-container">
+    <form class="contact-form">
+      <div class="form-message"></div>
+      
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" required></textarea>
+      </div>
+      
+      <button type="submit" class="btn btn-primary">
+        Send Message
+        <span class="arrow">→</span>
+      </button>
+    </form>
+    
+    <div class="contact-info">
+      <div class="contact-info-block">
+        <h3>Email</h3>
+        <p><a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
+      </div>
+      
+      <div class="contact-info-block">
+        <h3>Phone</h3>
+        <p><a href="tel:{{ site.phone }}">{{ site.phone_display }}</a></p>
+      </div>
+      
+      <div class="contact-info-block">
+        <h3>Location</h3>
+        <p>{{ site.address_short }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="cta-full">
+  <div class="cta-inner">
+    <div class="eyebrow" style="color: var(--accent); margin-bottom: 16px;">Begin Your Journey</div>
+    <h2 style="color: #fff; margin-bottom: 16px;">Ready to Explore Hindu Philosophy?</h2>
+    <p style="margin-bottom: 32px; font-size: 16px; opacity: 0.85; color: #fff;">Connect with the author and discover the timeless wisdom of Hindu philosophical traditions.</p>
+    <button class="btn btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+      Get in Touch
+      <span class="arrow">→</span>
+    </button>
+  </div>
+</div>

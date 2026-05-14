@@ -1,0 +1,31 @@
+<footer>
+  <div class="footer-content">
+    <div class="footer-section">
+      <h4>About</h4>
+      <p>{{ site.name }} is dedicated to exploring and sharing the profound wisdom of Hindu philosophy with readers and scholars worldwide.</p>
+    </div>
+    
+    <div class="footer-section">
+      <h4>Services</h4>
+      <ul>
+        {% for service in services %}
+        <li><a href="#services">{{ service.name }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+    
+    <div class="footer-section">
+      <h4>Contact</h4>
+      <p>{{ site.address_short }}</p>
+      <p><a href="tel:{{ site.phone }}">{{ site.phone_display }}</a></p>
+      <p><a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
+      {% if site.linkedin %}
+      <p><a href="{{ site.linkedin }}" target="_blank">LinkedIn</a></p>
+      {% endif %}
+    </div>
+  </div>
+  
+  <div class="footer-bottom">
+    <p>&copy; 2026 {{ site.name }}. All rights reserved. Photography via Unsplash.</p>
+  </div>
+</footer>

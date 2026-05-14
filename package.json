@@ -1,0 +1,13 @@
+{
+  "name": "core-concepts-in-hindu-philoso",
+  "version": "1.0.0",
+  "description": "Core Concepts in Hindu Philosophy - Author website",
+  "scripts": {
+    "dev": "eleventy --serve",
+    "build": "eleventy"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0",
+    "wrangler": "^4.0.0"
+  }
+}
