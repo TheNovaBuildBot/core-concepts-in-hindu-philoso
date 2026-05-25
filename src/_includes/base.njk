@@ -20,9 +20,6 @@
   <meta name="twitter:description" content="{{ description or site.specialty }}">
   <meta name="twitter:image" content="{{ site.url }}/assets/og-image.jpg">
   
-  <!-- Preconnect to Unsplash CDN -->
-  <link rel="preconnect" href="https://images.unsplash.com">
-  
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -289,59 +286,11 @@
       transform: rotate(-45deg) translate(7px, -7px);
     }
 
-    /* Hero */
-    .hero {
-      position: relative;
-      min-height: 90vh;
+    /* Hero CTA row (shared) */
+    .hero-ctas {
       display: flex;
-      align-items: flex-end;
-      padding: 0;
-      overflow: hidden;
-    }
-
-    .hero-bg {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 0;
-    }
-
-    .hero-bg img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      animation: heroZoom 1.6s ease-out;
-    }
-
-    @keyframes heroZoom {
-      from {
-        transform: scale(1.05);
-        opacity: 0;
-      }
-      to {
-        transform: scale(1);
-        opacity: 1;
-      }
-    }
-
-    .hero-overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(180deg, rgba(26, 42, 74, 0.25) 0%, rgba(26, 42, 74, 0.78) 88%);
-      z-index: 1;
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      padding: calc(var(--spacing-base) * 6) calc(var(--spacing-base) * 4);
-      max-width: 600px;
-      animation: fadeInUp 1.2s ease-out 0.3s both;
+      gap: calc(var(--spacing-base) * 3);
+      flex-wrap: wrap;
     }
 
     @keyframes fadeInUp {
@@ -353,34 +302,6 @@
         opacity: 1;
         transform: translateY(0);
       }
-    }
-
-    .hero-eyebrow {
-      color: var(--secondary-color);
-      display: block;
-      font-size: 12px;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      margin-bottom: calc(var(--spacing-base) * 3);
-    }
-
-    .hero h1 {
-      color: #ffffff;
-      margin-bottom: calc(var(--spacing-base) * 3);
-      font-size: 48px;
-    }
-
-    .hero-subhead {
-      color: rgba(255, 255, 255, 0.95);
-      font-size: 18px;
-      margin-bottom: calc(var(--spacing-base) * 6);
-      line-height: 1.6;
-    }
-
-    .hero-ctas {
-      display: flex;
-      gap: calc(var(--spacing-base) * 3);
-      flex-wrap: wrap;
     }
 
     /* Sections */
@@ -415,23 +336,6 @@
       box-shadow: var(--shadow-hover);
     }
 
-    .card-image {
-      width: 100%;
-      aspect-ratio: 4/3;
-      overflow: hidden;
-    }
-
-    .card-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.6s ease;
-    }
-
-    .card:hover .card-image img {
-      transform: scale(1.06);
-    }
-
     .card-body {
       padding: calc(var(--spacing-base) * 5);
       flex: 1;
@@ -462,30 +366,10 @@
       gap: 10px;
     }
 
-    /* About Section */
-    .about-content {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: calc(var(--spacing-base) * 8);
-      align-items: center;
-    }
-
-    .about-text h2 {
-      margin-bottom: calc(var(--spacing-base) * 4);
-    }
-
+    /* About Section text */
     .about-text p {
       color: var(--text-light);
       margin-bottom: calc(var(--spacing-base) * 3);
-    }
-
-    .profile-photo {
-      width: 160px;
-      height: 160px;
-      border-radius: 50%;
-      border: 4px solid var(--secondary-color);
-      box-shadow: var(--shadow);
-      object-fit: cover;
     }
 
     /* Contact Section */
@@ -631,6 +515,442 @@
 
     .footer-credit {
       margin-top: calc(var(--spacing-base) * 2);
+    }
+
+    /* =============================================
+       HERO — SPLIT LAYOUT (Book Cover + Text)
+       ============================================= */
+    .hero-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 100vh;
+    }
+
+    /* Left panel — warm cream background */
+    .hero-split-visual {
+      background: linear-gradient(145deg, #f5f0e8 0%, #ede5d4 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 80px 60px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Subtle mandala-like pattern in background */
+    .hero-split-visual::before {
+      content: '';
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      border-radius: 50%;
+      border: 60px solid rgba(212, 175, 55, 0.08);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+    }
+
+    .hero-split-visual::after {
+      content: '';
+      position: absolute;
+      width: 360px;
+      height: 360px;
+      border-radius: 50%;
+      border: 30px solid rgba(212, 175, 55, 0.06);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+    }
+
+    .book-cover-wrap {
+      position: relative;
+      z-index: 1;
+      animation: bookReveal 1.2s cubic-bezier(0.22, 1, 0.36, 1) 0.2s both;
+    }
+
+    @keyframes bookReveal {
+      from {
+        opacity: 0;
+        transform: translateY(40px) rotate(-3deg);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) rotate(-2deg);
+      }
+    }
+
+    .book-cover-img {
+      width: 320px;
+      max-width: 100%;
+      border-radius: 4px;
+      box-shadow:
+        0 4px 12px rgba(26, 42, 74, 0.15),
+        0 20px 60px rgba(26, 42, 74, 0.25),
+        0 40px 80px rgba(26, 42, 74, 0.12);
+      display: block;
+      transform: rotate(-2deg);
+      transition: transform 0.6s ease, box-shadow 0.6s ease;
+    }
+
+    .book-cover-img:hover {
+      transform: rotate(0deg) scale(1.02);
+      box-shadow:
+        0 8px 20px rgba(26, 42, 74, 0.2),
+        0 30px 80px rgba(26, 42, 74, 0.3),
+        0 60px 100px rgba(26, 42, 74, 0.15);
+    }
+
+    .book-cover-glow {
+      position: absolute;
+      bottom: -30px;
+      left: 50%;
+      transform: translateX(-50%) rotate(-2deg);
+      width: 80%;
+      height: 40px;
+      background: radial-gradient(ellipse, rgba(26, 42, 74, 0.22) 0%, transparent 70%);
+      filter: blur(10px);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    /* Right panel — deep navy */
+    .hero-split-text {
+      background: var(--primary-color);
+      display: flex;
+      align-items: center;
+      padding: 80px 64px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Decorative corner accent */
+    .hero-split-text::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 200px;
+      height: 200px;
+      background: radial-gradient(circle at top right, rgba(212, 175, 55, 0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-split-text::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 160px;
+      height: 160px;
+      background: radial-gradient(circle at bottom left, rgba(212, 175, 55, 0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      animation: fadeInUp 1.2s ease-out 0.5s both;
+    }
+
+    /* Ornament */
+    .hero-ornament {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    .ornament-line {
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--secondary-color), transparent);
+      max-width: 60px;
+    }
+
+    .ornament-symbol {
+      color: var(--secondary-color);
+      font-size: 14px;
+      line-height: 1;
+    }
+
+    /* Eyebrow on dark bg */
+    .hero-split-text .hero-eyebrow {
+      display: block;
+      font-size: 12px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--secondary-color);
+      margin-bottom: 20px;
+    }
+
+    /* Hero title */
+    .hero-title {
+      color: #ffffff;
+      font-size: 42px;
+      line-height: 1.15;
+      margin-bottom: 28px;
+      letter-spacing: -0.02em;
+    }
+
+    /* Decorative rule under title */
+    .hero-title::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 3px;
+      background: var(--secondary-color);
+      margin-top: 20px;
+      border-radius: 2px;
+    }
+
+    /* Bio text */
+    .hero-bio {
+      color: rgba(255, 255, 255, 0.82);
+      font-size: 16px;
+      line-height: 1.75;
+      margin-bottom: 40px;
+    }
+
+    .hero-bio em {
+      color: var(--secondary-color);
+      font-style: italic;
+    }
+
+    /* =============================================
+       ABOUT SECTION — updated layout
+       ============================================= */
+    .about-content {
+      display: grid;
+      grid-template-columns: 1fr 380px;
+      gap: 64px;
+      align-items: center;
+    }
+
+    .about-text .eyebrow {
+      margin-bottom: 16px;
+    }
+
+    .about-text h2 {
+      color: var(--primary-color);
+      margin-bottom: 24px;
+    }
+
+    .about-visual {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 32px;
+    }
+
+    .about-book-img {
+      width: 220px;
+      border-radius: 4px;
+      box-shadow:
+        0 8px 24px rgba(26, 42, 74, 0.18),
+        0 20px 40px rgba(26, 42, 74, 0.12);
+      display: block;
+      transition: transform 0.5s ease;
+    }
+
+    .about-book-img:hover {
+      transform: translateY(-6px);
+    }
+
+    .about-author-card {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 20px 24px;
+      box-shadow: 0 4px 16px rgba(26, 42, 74, 0.07);
+      width: 100%;
+      max-width: 280px;
+    }
+
+    .author-avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: var(--primary-color);
+      color: var(--secondary-color);
+      font-weight: 700;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      letter-spacing: 0.05em;
+    }
+
+    .author-name {
+      display: block;
+      font-weight: 600;
+      font-size: 14px;
+      color: var(--primary-color);
+      margin-bottom: 4px;
+    }
+
+    .author-label {
+      font-size: 12px;
+      color: var(--secondary-color);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    /* =============================================
+       CARDS — icon-based (no images)
+       ============================================= */
+    .card {
+      background-color: #ffffff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(26, 42, 74, 0.08);
+      transition: all 0.35s ease;
+      display: flex;
+      flex-direction: column;
+      border: 1px solid var(--border-color);
+    }
+
+    .card-icon {
+      background: linear-gradient(135deg, var(--primary-color), #2a3f6f);
+      color: var(--secondary-color);
+      font-weight: 700;
+      font-size: 20px;
+      font-family: Georgia, serif;
+      padding: 28px 32px;
+      letter-spacing: 0.02em;
+      border-bottom: 3px solid var(--secondary-color);
+    }
+
+    /* =============================================
+       QUOTE / CTA BAND
+       ============================================= */
+    .section-quote {
+      background: linear-gradient(135deg, var(--primary-color) 0%, #243558 100%);
+      padding: var(--spacing-section) calc(var(--spacing-base) * 4);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .section-quote::before {
+      content: '';
+      position: absolute;
+      top: -80px;
+      right: -80px;
+      width: 320px;
+      height: 320px;
+      border-radius: 50%;
+      border: 60px solid rgba(212, 175, 55, 0.07);
+      pointer-events: none;
+    }
+
+    .quote-inner {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .quote-mark {
+      font-size: 72px;
+      color: var(--secondary-color);
+      opacity: 0.5;
+      line-height: 1;
+      margin-bottom: -16px;
+      font-family: Georgia, serif;
+    }
+
+    .quote-text {
+      font-size: 22px;
+      line-height: 1.65;
+      color: rgba(255, 255, 255, 0.9);
+      font-style: italic;
+      font-family: Georgia, 'Times New Roman', serif;
+      margin: 0 0 20px;
+      quotes: none;
+    }
+
+    .quote-cite {
+      font-size: 13px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--secondary-color);
+      font-style: normal;
+    }
+
+    /* =============================================
+       RESPONSIVE — Hero split collapses to stack
+       ============================================= */
+    @media (max-width: 900px) {
+      .hero-split {
+        grid-template-columns: 1fr;
+        min-height: auto;
+      }
+
+      .hero-split-visual {
+        padding: 60px 40px 50px;
+        min-height: 420px;
+      }
+
+      .book-cover-img {
+        width: 240px;
+        transform: rotate(-1deg);
+      }
+
+      .hero-split-text {
+        padding: 60px 40px;
+      }
+
+      .hero-title {
+        font-size: 32px;
+      }
+
+      .about-content {
+        grid-template-columns: 1fr;
+      }
+
+      .about-visual {
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .hero-split-visual {
+        padding: 48px 24px 40px;
+        min-height: 340px;
+      }
+
+      .book-cover-img {
+        width: 190px;
+      }
+
+      .hero-split-text {
+        padding: 48px 24px;
+      }
+
+      .hero-title {
+        font-size: 28px;
+      }
+
+      .hero-bio {
+        font-size: 15px;
+      }
+
+      .quote-text {
+        font-size: 18px;
+      }
+
+      .quote-mark {
+        font-size: 52px;
+      }
     }
 
     /* Scroll Reveal */
