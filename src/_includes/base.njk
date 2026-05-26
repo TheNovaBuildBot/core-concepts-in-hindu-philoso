@@ -7,18 +7,16 @@
   <meta name="description" content="{{ description or site.specialty }}">
   <link rel="canonical" href="{{ site.url }}{{ page.url }}">
   
-  <!-- Open Graph -->
+  <!-- Open Graph (og:image omitted until an image is uploaded to /assets/og-image.jpg) -->
   <meta property="og:title" content="{{ title or site.name }}">
   <meta property="og:description" content="{{ description or site.specialty }}">
   <meta property="og:type" content="website">
   <meta property="og:url" content="{{ site.url }}{{ page.url }}">
-  <meta property="og:image" content="{{ site.url }}/assets/og-image.jpg">
-  
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Twitter Card (text-only summary until og-image exists) -->
+  <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="{{ title or site.name }}">
   <meta name="twitter:description" content="{{ description or site.specialty }}">
-  <meta name="twitter:image" content="{{ site.url }}/assets/og-image.jpg">
   
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
