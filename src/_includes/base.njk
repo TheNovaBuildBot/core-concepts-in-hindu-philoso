@@ -951,6 +951,113 @@
       }
     }
 
+    /* =============================================
+       PURCHASE / BUY SECTION
+       ============================================= */
+    .section-buy {
+      background: linear-gradient(160deg, #f5f0e8 0%, #ede5d4 100%);
+    }
+
+    .buy-channels {
+      display: flex;
+      align-items: flex-start;
+      gap: 40px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 48px;
+    }
+
+    .buy-group {
+      flex: 1;
+      min-width: 240px;
+      max-width: 340px;
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 36px 32px;
+      box-shadow: 0 4px 24px rgba(26, 42, 74, 0.08);
+      border: 1px solid var(--border-color);
+    }
+
+    .buy-group-label {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--primary-color);
+      margin-bottom: 24px;
+      padding-bottom: 16px;
+      border-bottom: 2px solid var(--secondary-color);
+    }
+
+    .buy-group-icon {
+      font-size: 20px;
+      line-height: 1;
+    }
+
+    .buy-links {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .buy-link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 18px;
+      border-radius: 10px;
+      border: 1.5px solid var(--border-color);
+      background: #fafbf9;
+      color: var(--text-color);
+      font-weight: 600;
+      font-size: 15px;
+      text-decoration: none;
+      transition: all 0.28s ease;
+    }
+
+    .buy-link:hover {
+      background: var(--primary-color);
+      border-color: var(--primary-color);
+      color: #ffffff;
+      transform: translateX(4px);
+      box-shadow: 0 6px 20px rgba(26, 42, 74, 0.18);
+    }
+
+    .buy-link-retailer {
+      color: inherit;
+    }
+
+    .buy-link-arrow {
+      color: var(--secondary-color);
+      font-size: 16px;
+      transition: transform 0.28s ease, color 0.28s ease;
+    }
+
+    .buy-link:hover .buy-link-arrow {
+      transform: translateX(4px);
+      color: var(--secondary-color);
+    }
+
+    .buy-divider {
+      display: none;
+    }
+
+    @media (max-width: 768px) {
+      .buy-channels {
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+      }
+
+      .buy-group {
+        max-width: 100%;
+        width: 100%;
+      }
+    }
+
     /* Scroll Reveal */
     [data-scroll-reveal] {
       opacity: 0;
