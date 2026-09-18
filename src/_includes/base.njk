@@ -1284,6 +1284,15 @@
 
 
   </style>
+{% if site.ga_id %}
+  <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.ga_id }}"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', '{{ site.ga_id }}');
+  </script>
+  {% endif %}
 </head>
 <body>
   {% include "header.njk" %}
@@ -1294,15 +1303,6 @@
   
   {% include "footer.njk" %}
   
-  {% if site.ga_id %}
-  <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.ga_id }}"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', '{{ site.ga_id }}');
-  </script>
-  {% endif %}
 
   <script>
     // Sticky header on scroll
